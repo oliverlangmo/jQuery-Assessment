@@ -2,27 +2,30 @@ var clicks = 0;
 $(document).ready(function(){
   $('#generate').on('click', function(){
    clicks++;
-
+      //adds div to DOM
        var newDiv = document.createElement('div');
        newDiv.textContent = '';
        newDiv.className = 'new';
        document.getElementById('display').appendChild(newDiv);
+       //creates and adds new delete button
       var delButton = document.createElement('button');
       delButton.textContent = 'delete';
       delButton.className = "delete";
       newDiv.appendChild(delButton);
+      //creates and adds new change button
       var changeButton = document.createElement('button');
       changeButton.textContent = 'Change';
       changeButton.className = "changeClr";
       newDiv.appendChild(changeButton);
-
+     //creates and displays click counter
       var clickCounter = document.createElement('p');
       clickCounter.textContent = 'there have been this many clicks: ' + clicks;
-
       document.getElementById('display').appendChild(clickCounter);
+      //delete button functionality
      $(".delete").on('click', function(){
        $(this).parent().remove();
      });
+     //color change button functionality
     $(".changeClr").on('click', function(){
        $('.new').toggleClass('change');
 
