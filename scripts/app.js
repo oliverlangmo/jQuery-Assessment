@@ -17,6 +17,7 @@ $(document).ready(function(){
       var changeButton = document.createElement('button');
       changeButton.textContent = 'Change';
       changeButton.id = 'changeClr' + clicks;
+      changeButton.style.backgroundColor  = 'red';
       newDiv.appendChild(changeButton);
      //creates and displays click counter
       var clickCounter = document.createElement('p');
@@ -29,6 +30,7 @@ $(document).ready(function(){
      //color change button functionality
     $("#changeClr"+ clicks).on('click', function(){
        $(this).parent().toggleClass('change');
+       $(this).toggleClass('new');
         });
 
 
