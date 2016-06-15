@@ -6,6 +6,7 @@ $(document).ready(function(){
        var newDiv = document.createElement('div');
        newDiv.textContent = '';
        newDiv.className = 'new';
+       newDiv.addClass = "new";
        document.getElementById('display').appendChild(newDiv);
        //creates and adds new delete button
       var delButton = document.createElement('button');
@@ -15,7 +16,7 @@ $(document).ready(function(){
       //creates and adds new change button
       var changeButton = document.createElement('button');
       changeButton.textContent = 'Change';
-      changeButton.className = "changeClr";
+      changeButton.id = 'changeClr' + clicks;
       newDiv.appendChild(changeButton);
      //creates and displays click counter
       var clickCounter = document.createElement('p');
@@ -26,10 +27,9 @@ $(document).ready(function(){
        $(this).parent().remove();
      });
      //color change button functionality
-    $(".changeClr").on('click', function(){
-       $('.new').toggleClass('change');
-
-    });
+    $("#changeClr"+ clicks).on('click', function(){
+       $(this).parent().toggleClass('change');
+        });
 
 
     });
