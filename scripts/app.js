@@ -6,7 +6,6 @@ $(document).ready(function(){
        var newDiv = document.createElement('div');
        newDiv.textContent = '';
        newDiv.className = 'new';
-       newDiv.addClass = "new";
        document.getElementById('display').appendChild(newDiv);
        //creates and adds new delete button
       var delButton = document.createElement('button');
@@ -30,8 +29,15 @@ $(document).ready(function(){
      //color change button functionality
     $("#changeClr"+ clicks).on('click', function(){
        $(this).parent().toggleClass('change');
-       $(this).toggleClass('new');
-        });
+       changeButton.style.backgroundColor = 'yellow';
+       changeButton.textContent = 'change back';
+       changeButton.className = 'changebck';
+    $('.changebck').on('click', function(){
+       changeButton.style.backgroundColor = 'red';
+       changeButton.textContent = 'Change';
+       $(this).removeClass( 'changebck');
+    });
+     });
 
 
     });
